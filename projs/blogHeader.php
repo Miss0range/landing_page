@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -29,34 +31,35 @@
     </style>
 </head>
 <body>
-    <!-- navigation section -->
-    <nav class = "navbar navbar-expand-md my-2" id = "topNavBar">
+    <nav class="navbar navbar-expand-md my-2">
         <div class="container-lg">
-            <a href="index.php" class="navbar-brand">
+            <a href="../index.php" class="navbar-brand">
                 <span class="fw-bold text-secondary">MagicaJen</span>   
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target = "#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
-                <ul class="navbar-nav me-3">
+            <div class="collapse navbar-collapse justify-content-end" id = "main-nav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                        <a href="../index.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="../index.php#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.php#projects" class="nav-link">Projects</a>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a href="#contact" class="nav-link">Contact Me</a>
+                        <a href="../index.php#contact" class="nav-link">Contact Me</a>
                     </li>
                     <li class="nav-item ms-2 d-none d-md-inline">
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="../index.php#contact" class="btn btn-secondary">Contact Me</a>
                     </li>
                 </ul>
-                <!-- <form role = "search" class="d-flex">
-                    <input type="search" class="form-control mx-2" placeholder="search" aria-label="search" >
-                    <button class="btn btn-secondary" type="submit">Search</button>
-                </form> -->
             </div>
         </div>
+        
+
     </nav>
+</body>

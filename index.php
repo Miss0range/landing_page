@@ -9,9 +9,10 @@
                 <div class="col-lg-6 col-xl-4">
                     <div id="about-me-text" class ="justify-content-center align-items-center" >
                         <h1 class="display-5">Hello there,...</h1>
-                        <p class="lead">My name is Jiachen (Jeniffer) Zhang. I am a front end developer with working experience of HTML, CSS, JS and WordPress. Check out my projects <a href="" class="text-success fw-bold">here</a></p>
+                        <p class="lead">My name is Jiachen (Jeniffer) Zhang. I am a front end developer with working experience of HTML, CSS, JS and WordPress. I've also done projects with Flutter. Check out my projects <a href="" class="text-success fw-bold">here</a></p>
 
-                        <p class="lead">I h</p>
+                        <p class="lead">I'm also a content uploader on Youtube and Bilibili.</p>
+                        <a href = 'https://space.bilibili.com/737188?spm_id_from=333.788.0.0' class="btn btn-secondary">Bilibili</a>
                     </div>
                 </div>
                 <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel">
@@ -36,8 +37,8 @@
     <!-- Project show case with card-->
     <section id="projects" class="bg-light">
         <div class="container-lg my-5 py-5">
+            <!-- first showcase card -->
             <div class="row justify-content-center position-relative my-5 py-5">
-                <!-- first showcase card -->
                 <div class="col-md-4">
                     <div id="showcasecard" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -53,7 +54,7 @@
                     <p class=" lead">
                         A due date oriented personal digital planner on android 12. Built with Flutter frame work powered by Dart. This digital planner helps users to keep track of remaning time and due date of their tasks, manage daily tasks with a single click and plan ahead with our calendar view. All storage are local to protect your privacy. 
                     </p>
-                    <a href="index.html" class="btn btn-primary stretched-link">Read More</a>
+                    <a href="projs/taskPlanner.php" class="btn btn-primary stretched-link">Read More</a>
                 </div>
             </div>
             <!-- second showcase card -->
@@ -72,15 +73,15 @@
             </div>
             <div class="row justify-content-center my-5">
                 <div class="col-lg-6">
-                    <form action="">
+                    <form action="sendemail.php" method = "POST">
                         <!-- name input -->
                         <label for="name" class="form-label lead mx-1 mb-2">Your Name</label>
                         <div class="mb-4 input-group">
                             <span class="input-group-text">
                                 <i class="bi bi-person-circle"></i>
                             </span>
-                            <input type="text" class="form-control" id="name" placeholder="FirstName" required />
-                            <input type="text" class="form-control" id="name" placeholder="LastName" required />
+                            <input type="text" class="form-control" id="name" name = "firstName" placeholder="FirstName" required />
+                            <input type="text" class="form-control" id="name" name = "lastName" placeholder="LastName" required />
                         </div>
                         <!-- email input -->
                         <label for="email" class="form-label lead mx-1 mb-2">Your Email Address</label>
@@ -88,7 +89,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-envelope"></i>
                             </span>
-                            <input type="email" class="form-control" id="email" placeholder="hello@example.com" required />
+                            <input type="email" class="form-control" id="email" name = "email" placeholder="hello@example.com" required />
                             <span class="tt input-group-text" title="Please enter an eamil address we can reply to.">
                                 <i class="bi bi-question-circle"></i>
                             </span>
@@ -99,16 +100,16 @@
                             <span class="input-group-text">
                                 <i class="bi bi-chat-left-text"></i>
                             </span>
-                            <input type="text" class="form-control" id="message-subject" placeholder="This message is about...">
+                            <input type="text" class="form-control" id="message-subject" name = "subject" placeholder="This message is about..." required />
                         </div>
                         <!-- message body -->
                         <div class="form-floating mb-4 mt-5">
-                            <textarea class="form-control" name="" id="message-body" style="height:200px"></textarea>
+                            <textarea class="form-control" name="body" id="message-body" style="height:200px"></textarea>
                             <label for="message-body" class="form-label">Your message...</label>
                         </div>
                         <!-- submit btn -->
                         <div class="text-center">
-                            <button class="btn btn-secondary" type="submit">Submit</button>
+                            <button class="btn btn-secondary" type="submit">Send</button>
                         </div>
                     </form>
                     
