@@ -12,13 +12,15 @@
                         <p class="lead">My name is Jiachen (Jeniffer) Zhang. I am a front end developer with working experience of HTML, CSS, JS and WordPress. I've also done projects with Flutter. Check out my projects <a href="" class="text-success fw-bold">here</a></p>
 
                         <p class="lead">I'm also a content uploader on Youtube and Bilibili.</p>
-                        <a href = 'https://space.bilibili.com/737188?spm_id_from=333.788.0.0' class="btn btn-secondary">Bilibili</a>
+                        <a href = 'https://space.bilibili.com/737188?spm_id_from=333.788.0.0' class="btn btn-secondary" target = "_blank">Bilibili</a>
                     </div>
                 </div>
                 <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active"><img src="assets/dark2500.png" alt="" class="img-fluid "></div>
                         <div class="carousel-item"><img src="assets/light2500.png" alt="" class="img-fluid"></div>
+                        <div class="carousel-item"><img src="assets/trip/trip1.png" alt="" class="img-fluid"></div>
+                        <div class="carousel-item"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid"></div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#showcaseimg" data-bs-slide = "prev">
                             <span class="carousel-control-prev-icon text-primary" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -37,29 +39,8 @@
     <!-- Project show case with card-->
     <section id="projects" class="bg-light">
         <div class="container-lg my-5 py-5">
-            <!-- first showcase card -->
-            <div class="row justify-content-center position-relative my-5 py-5">
-                <div class="col-md-4">
-                    <div id="showcasecard" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active"><img src="assets/dark2500.png" alt="" class="img-fluid "></div>
-                            <div class="carousel-item"><img src="assets/light2500.png" alt="" class="img-fluid"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h5 class="mt-1">
-                        Task Planner
-                    </h5>
-                    <p class=" lead">
-                        A due date oriented personal digital planner on android 12. Built with Flutter frame work powered by Dart. This digital planner helps users to keep track of remaning time and due date of their tasks, manage daily tasks with a single click and plan ahead with our calendar view. All storage are local to protect your privacy. 
-                    </p>
-                    <a href="projs/taskPlanner.php" class="btn btn-primary stretched-link">Read More</a>
-                </div>
-            </div>
-            <!-- second showcase card -->
-            
-            <!-- third showcase card -->
+            <?php include("showcase/showcase2.php"); ?>    
+            <?php include("showcase/showcase1.php"); ?>
         </div>
     </section>
 

@@ -22,10 +22,10 @@
                 <div class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../assets/light2500.png" class= "d-block w-100" alt="light">
+                            <img src="../assets/dlplanner/light2500.png" class= "d-block w-100" alt="light">
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/light2500.png" class= "d-block w-100" alt="light">
+                            <img src="../assets/dlplanner/dark2500.png" class= "d-block w-100" alt="light">
                         </div>
                     </div>
                 </div>
@@ -64,11 +64,11 @@
     <div class="container-lg">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-12">
-                <img src="../assets/architecture.png" class= "img-fluid"alt="Architecture">
+                <img src="../assets/dlplanner/architecture.png" class= "img-fluid"alt="Architecture">
             </div>
             <div class="col-lg-6 col-md-6 col-xs-12">
                 <h1 class="display-4">Building The Fundamential Structure</h1>
-                <p>This app have 4 pages, a "to-do list" page, a "finished list" page, a "past due list" page, and a calendar including all the tasks above.</p>
+                <p>This app have 4 pages, a "to-do list" page contains all the tasks to be finished and not expired yet, a "finished list" page contains all the tasks, a "past due list" page, and a calendar including all the tasks above.</p>
             </div>
         </div>
     </div>
