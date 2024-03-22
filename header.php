@@ -26,11 +26,18 @@
         .form-control::placeholder{
             color: #c4c4c4;
         }
+        .carousel-control-next,
+        .carousel-control-prev /*, .carousel-indicators */ {
+            filter: invert(100%);
+        }
+        .bg-light{
+            background-color: #f1f0f7 !important;
+        }
     </style>
 </head>
 <body>
     <!-- navigation section -->
-    <nav class = "navbar navbar-expand-md my-2" id = "topNavBar">
+    <nav class = "navbar navbar-expand-md py-3 bg-light" id = "topNavBar">
         <div class="container-lg">
             <a href="index.php" class="navbar-brand">
                 <span class="fw-bold text-secondary">MagicaJen</span>   

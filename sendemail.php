@@ -31,7 +31,7 @@ mail($to,$subject, $message, $headers);
 </head>
 <body onload ="setTimeout('redirect()', 5000)">
     <div class="container-lg justify-content-center align-items-center">
-        <div class="row align-items-center"  style = "height: 85vh">
+        <div class="row align-items-center"  style = "height: 95vh">
             <div class="col-xl-12 col-lg-12 text-center">
                 <h1 class="display-1">
                     We will get back to you soon. 
