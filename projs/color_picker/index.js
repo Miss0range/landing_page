@@ -17,9 +17,9 @@ const list = document.getElementById(`list`);
 //Rows & Col
 let gridSetting = {
     nRows:6,
-    nCols:3,
+    nCols:6,
     gridWidth:100,
-    gridHeight:200
+    gridHeight:100
 }
 
 const getRandColor = () => `#${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,`0`)}`;

@@ -29,6 +29,12 @@ body.dark{
     transition: .4s;
 }
 
+canvas{
+    margin-top: 50px;
+    height: 60vw;
+    width: 60vw;
+}
+
 .title{
     height: 10vh;
     padding: 3vh;
