@@ -1,0 +1,385 @@
+<html lang="en">
+<?php include('blogHeader.php');?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Source Code</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="display-3 font-weight-bold text-center p-5 m-5">Color Picker Source Code</div>
+            <div style="background-color: #E8E8E8;">
+                <pre>
+                    <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Document&lt;/title&gt;
+                        &lt;style&gt;
+                            *{
+                                box-sizing: border-box;
+                                margin: 0;
+                            }
+
+
+                            body{
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                min-height: 100vh;
+
+                                background-color: var(--primary-page-bg);
+                                color: var(--primary-text-color);
+
+                                --primary-page-bg: #f2f2f2;
+                                --primary-text-color:#5d5d5d;
+                                transition: .4s;
+                            }
+
+                            body.dark{
+                                
+                                background-color: var(--primary-page-bg);
+                                color: var(--primary-text-color);
+
+                                --primary-page-bg: #353535;
+                                --primary-text-color:#eeeeee;
+                                transition: .4s;
+                            }
+
+                            canvas{
+                                margin-top: 50px;
+                                height: 60vw;
+                                width: 60vw;
+                            }
+
+                            .title{
+                                height: 10vh;
+                                padding: 3vh;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 40px;
+                                font-weight: bold;
+                                text-align: center;
+                            }
+
+                            #display{
+                                width: 65vw;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            #canvas{
+                                margin-bottom: 30px;
+                                background: #fafafa;
+                                border-radius: 5px;
+                                width: 40vw;
+                                height: 40vw;
+                                transition: .4s;
+                            }
+
+                            #canvas.dark{
+                                background: #353535;
+                                transition: .4s;
+                            }
+
+                            #generate-btn{
+                                display: inline-block;
+                                background-color: #fafafa;
+                                padding: 12px 30px 12px 30px;
+                                border: 1px dotted #292929;
+                                border-radius: 30px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-weight: bold;
+                                font-size: 15px;
+                            }
+
+                            #collection{
+                                margin: 0px;
+                                width: 35vw;
+                                height: 100vh;
+                            }
+
+                            #list{
+                                margin: 0;
+                                height: 90vh;
+                                overflow: auto;
+                            }
+
+                            .saved-color{
+                                border-radius: 15px;
+                                padding: 0vh 5vh 0vh 5vh;
+                                height: 7vh;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: right;
+
+                                color: #292929;
+                            }
+
+                            .display-color{
+                                height: 60%;
+                                padding: 0 5% 0 5%;
+                                width: 30%;
+                                border-radius: 30px;
+                                text-align: center;
+                                padding-top: 2%;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+
+                            .remove-btn{
+                                height: 30px;
+                                width: 30px;
+                                margin-left: 20px;
+                                margin-right: 0;
+                                display: inline-block;
+                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                text-align: center;
+                                font-size: 20px;
+                                border-radius: 100px;
+                                border: 2px solid black;
+                                background-color: #eeeeee;
+                            }
+
+                            .remove-btn:hover{
+                                cursor: default;
+                            }
+
+                            /* switch color */
+
+                            .switch {
+                                position: relative;
+                                display: inline-block;
+                                width: 40px;
+                                height: 24px;
+                                margin-top: 30px;
+                            }
+                            
+                            .switch input { 
+                                opacity: 0;
+                                width: 0;
+                                height: 0;
+                            }
+                            
+                            .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #7de7ff;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+                            
+                            .slider:before {
+                                position: absolute;
+                                content: "";
+                                height: 16px;
+                                width: 16px;
+                                left: 4px;
+                                bottom: 4px;
+                                background-color: rgb(255, 255, 255);
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+                            
+                            input:checked + .slider {
+                                color: rgb(31, 255, 91);
+                                background-color: #eeeeee;
+                            }
+                            
+                            input:focus + .slider {
+                                box-shadow: 0 0 1px #c28769;
+                            }
+                            
+                            input:checked + .slider:before {
+                                -webkit-transform: translateX(16px);
+                                -ms-transform: translateX(16px);
+                                transform: translateX(16px);
+                                background-color: #ff9f05;
+                            }
+                            
+                            /* Rounded sliders */
+                            .slider.round {
+                                border-radius: 34px;
+                            }
+                            
+                            .slider.round:before {
+                                border-radius: 50%;
+                            }
+
+                            .switch-text{
+                                display: inline-block;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-weight: bold;
+                                margin: 0px 10px 0px 10px;
+                            }
+
+                            .light-text{
+                                color:#eeeeee;
+                            }
+
+                            .dark-text{
+                                color: #353535;
+                            }
+
+                            @media screen and (max-width:992px) {
+                                body{
+                                    flex-direction: column;
+                                }
+                                #canvas{
+                                    height: 90%;
+                                    width: 90%;
+                                }
+                                #display{
+                                    width: 100%;
+                                }
+                                #collection{
+                                    width: 100%;
+                                    height: fit-content !important;
+                                }
+                                #list{
+                                    width: 80%;
+                                    margin: auto;
+                                    height: fit-content;
+                                    margin-bottom: 50px;
+                                }
+                                .display-color{
+                                    font-size: 12px;
+                                }
+                            }
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id = "display"&gt;
+                            &lt;canvas id="canvas" width="600" height="600"&gt;&lt;/canvas&gt;
+                            &lt;div&gt;&lt;button id="generate-btn"&gt;Generate&lt;/button&gt;&lt;/div&gt;
+                            &lt;div class="toggle"&gt;
+                                &lt;div class="light-text switch-text"&gt;
+                                    light
+                                &lt;/div&gt;
+                                &lt;label class="switch" id="switch"&gt;
+                                    &lt;input type="checkbox"&gt;
+                                    &lt;span class="slider round"&gt;&lt;/span&gt;
+                                &lt;/label&gt;
+                                &lt;div class="dark-text switch-text"&gt;
+                                    dark
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div id="collection"&gt;
+                            &lt;div class="title"&gt;Your Color Card&lt;/div&gt;
+                            &lt;div id="list"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;script&gt;
+                            //get canvas data
+                            const canvas = document.getElementById(`canvas`);
+                            const ctx = canvas.getContext('2d');
+
+                            const canvasData = {
+                                height:canvas.height,
+                                width:canvas.width
+                            }
+                            //init colorStorage
+                            let colorStorage = [];
+                            //access stored data list
+                            const list = document.getElementById(`list`);
+
+                            //Rows &amp; Col
+                            let gridSetting = {
+                                nRows:6,
+                                nCols:6,
+                                gridWidth:100,
+                                gridHeight:100
+                            }
+
+                            const getRandColor = () =&gt; `#${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,`0`)}`;
+
+                            const drawRand = ()=&gt;{
+                                colorStorage = [];
+                                for(i=0;i&lt;gridSetting.nRows;i++){
+                                    for(j=0;j&lt;gridSetting.nCols;j++){
+                                        ctx.fillStyle = getRandColor();
+                                        colorStorage.push(ctx.fillStyle);
+                                        ctx.fillRect(i*gridSetting.gridWidth+2.5,j*gridSetting.gridHeight+2.5,gridSetting.gridWidth-5,gridSetting.gridHeight-5);
+                                    }
+                                }
+                            }
+
+                            //init
+                            drawRand();
+
+                            //generate button
+                            const redrawBtn = document.getElementById(`generate-btn`);
+                            redrawBtn.addEventListener('click',drawRand);
+
+                            //remove selected color
+                            const removeSavedColor = (e)=&gt;{
+                                list.removeChild(e.target.parentElement);
+                            }
+
+                            //enqueue new selected color
+                            const addColorToList = (colorCode)=&gt;{
+
+                                let savedColor = document.createElement('div');
+                                savedColor.setAttribute(`class`,`saved-color`);
+                                savedColor.setAttribute(`style`, `background-color:${colorCode}`);
+
+                                let colorCodeText = document.createElement('div');
+                                colorCodeText.setAttribute(`class`,`display-color`);
+                                colorCodeText.setAttribute(`style`, `background-color:#fafafa`);
+                                colorCodeText.innerHTML = colorCode
+                                colorCodeText.addEventListener('click', (e)=&gt;{
+                                    navigator.clipboard.writeText(colorCodeText.innerHTML);
+                                    alert("color hex code copied to your clipboard:  " + colorCodeText.innerHTML);
+                                });
+
+                                let removeBtn = document.createElement('span');
+                                removeBtn.innerHTML = "—";
+                                removeBtn.addEventListener('click', (e)=&gt;{removeSavedColor(e)});
+                                removeBtn.setAttribute(`class`,`remove-btn`);
+                                
+                                savedColor.appendChild(colorCodeText);
+                                savedColor.appendChild(removeBtn);
+
+                                list.appendChild(savedColor);
+                            }
+
+
+                            //extract color from color storage using offset on canvas
+                            const extractPixelColor = (e)=&gt;{
+                                let {offsetX,offsetY} = e;
+                                offsetX = offsetX*gridSetting.nRows/canvas.getBoundingClientRect().width;//Re-ratio offset pixel to canvas pixel
+                                offsetY = offsetY*gridSetting.nCols/canvas.getBoundingClientRect().height;
+                                res = colorStorage[Math.floor(offsetX)*gridSetting.nCols + Math.floor(offsetY)];
+                                addColorToList(res);
+                            }
+
+                            canvas.addEventListener('click', (e)=&gt;extractPixelColor(e));
+
+                            //toggle color mode
+                            const switchBtn = document.getElementById(`switch`);
+                            switchBtn.addEventListener('change',(e)=&gt;{
+                                document.body.classList.toggle('dark');
+                                document.getElementById(`canvas`).classList.toggle(`dark`);
+                            });
+
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+<?php include('../footer.php');?>    
+</body>
+</html>

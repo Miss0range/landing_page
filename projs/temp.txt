@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
         *{
             box-sizing: border-box;
             margin: 0;
@@ -243,31 +243,31 @@
                 font-size: 12px;
             }
         }
-    </style>
-</head>
-<body>
-    <div id = "display">
-        <canvas id="canvas" width="600" height="600"></canvas>
-        <div><button id="generate-btn">Generate</button></div>
-        <div class="toggle">
-            <div class="light-text switch-text">
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id = "display"&gt;
+        &lt;canvas id="canvas" width="600" height="600"&gt;&lt;/canvas&gt;
+        &lt;div&gt;&lt;button id="generate-btn"&gt;Generate&lt;/button&gt;&lt;/div&gt;
+        &lt;div class="toggle"&gt;
+            &lt;div class="light-text switch-text"&gt;
                 light
-            </div>
-            <label class="switch" id="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            <div class="dark-text switch-text">
+            &lt;/div&gt;
+            &lt;label class="switch" id="switch"&gt;
+                &lt;input type="checkbox"&gt;
+                &lt;span class="slider round"&gt;&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;div class="dark-text switch-text"&gt;
                 dark
-            </div>
-        </div>
-    </div>
-    <div id="collection">
-        <div class="title">Your Color Card</div>
-        <div id="list"></div>
-    </div>
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="collection"&gt;
+        &lt;div class="title"&gt;Your Color Card&lt;/div&gt;
+        &lt;div id="list"&gt;&lt;/div&gt;
+    &lt;/div&gt;
     
-    <script>
+    &lt;script&gt;
         //get canvas data
         const canvas = document.getElementById(`canvas`);
         const ctx = canvas.getContext('2d');
@@ -281,7 +281,7 @@
         //access stored data list
         const list = document.getElementById(`list`);
 
-        //Rows & Col
+        //Rows &amp; Col
         let gridSetting = {
             nRows:6,
             nCols:6,
@@ -289,12 +289,12 @@
             gridHeight:100
         }
 
-        const getRandColor = () => `#${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,`0`)}`;
+        const getRandColor = () =&gt; `#${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,`0`)}`;
 
-        const drawRand = ()=>{
+        const drawRand = ()=&gt;{
             colorStorage = [];
-            for(i=0;i<gridSetting.nRows;i++){
-                for(j=0;j<gridSetting.nCols;j++){
+            for(i=0;i&lt;gridSetting.nRows;i++){
+                for(j=0;j&lt;gridSetting.nCols;j++){
                     ctx.fillStyle = getRandColor();
                     colorStorage.push(ctx.fillStyle);
                     ctx.fillRect(i*gridSetting.gridWidth+2.5,j*gridSetting.gridHeight+2.5,gridSetting.gridWidth-5,gridSetting.gridHeight-5);
@@ -310,12 +310,12 @@
         redrawBtn.addEventListener('click',drawRand);
 
         //remove selected color
-        const removeSavedColor = (e)=>{
+        const removeSavedColor = (e)=&gt;{
             list.removeChild(e.target.parentElement);
         }
 
         //enqueue new selected color
-        const addColorToList = (colorCode)=>{
+        const addColorToList = (colorCode)=&gt;{
 
             let savedColor = document.createElement('div');
             savedColor.setAttribute(`class`,`saved-color`);
@@ -325,14 +325,14 @@
             colorCodeText.setAttribute(`class`,`display-color`);
             colorCodeText.setAttribute(`style`, `background-color:#fafafa`);
             colorCodeText.innerHTML = colorCode
-            colorCodeText.addEventListener('click', (e)=>{
+            colorCodeText.addEventListener('click', (e)=&gt;{
                 navigator.clipboard.writeText(colorCodeText.innerHTML);
                 alert("color hex code copied to your clipboard:  " + colorCodeText.innerHTML);
             });
 
             let removeBtn = document.createElement('span');
             removeBtn.innerHTML = "—";
-            removeBtn.addEventListener('click', (e)=>{removeSavedColor(e)});
+            removeBtn.addEventListener('click', (e)=&gt;{removeSavedColor(e)});
             removeBtn.setAttribute(`class`,`remove-btn`);
             
             savedColor.appendChild(colorCodeText);
@@ -343,7 +343,7 @@
 
 
         //extract color from color storage using offset on canvas
-        const extractPixelColor = (e)=>{
+        const extractPixelColor = (e)=&gt;{
             let {offsetX,offsetY} = e;
             offsetX = offsetX*gridSetting.nRows/canvas.getBoundingClientRect().width;//Re-ratio offset pixel to canvas pixel
             offsetY = offsetY*gridSetting.nCols/canvas.getBoundingClientRect().height;
@@ -351,15 +351,15 @@
             addColorToList(res);
         }
 
-        canvas.addEventListener('click', (e)=>extractPixelColor(e));
+        canvas.addEventListener('click', (e)=&gt;extractPixelColor(e));
 
         //toggle color mode
         const switchBtn = document.getElementById(`switch`);
-        switchBtn.addEventListener('change',(e)=>{
+        switchBtn.addEventListener('change',(e)=&gt;{
             document.body.classList.toggle('dark');
             document.getElementById(`canvas`).classList.toggle(`dark`);
         });
 
-    </script>
-</body>
-</html>
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
