@@ -15,9 +15,9 @@
                         <a href = 'https://www.youtube.com/channel/UCNV6tlF6gHm1weSrn5Ho87w' class="btn btn-secondary" target = "_blank">Youtube</a>
                     </div>
                 </div>
-                <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel">
+                <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel" style="height: 60vh;">
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid "></div>
+                        <div class="carousel-item active"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid"></div>
                         <div class="carousel-item"><img src="assets/color_picker/dark_mobile.png" alt="" class="img-fluid "></div>
                         <div class="carousel-item"><img src="assets/color_picker/light.png" alt="" class="img-fluid "></div>
                         <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid "></div>
