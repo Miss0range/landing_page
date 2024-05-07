@@ -17,7 +17,7 @@
         <p class=" lead">
             A due date oriented personal digital planner on android 12. Built with Flutter frame work powered by Dart. This digital planner helps users to keep track of remaning time and due date of their tasks, manage daily tasks with a single click and plan ahead with our calendar view. All storage are local to protect your privacy. 
         </p>
-        <a href="projs/taskPlanner.php" class="btn btn-primary">Read More</a>
-        <a href="https://github.com/Miss0range/dlplanner" class="btn btn-primary">Git Repo</a>
+        <a href="projs/taskPlanner.php" class="btn btn-primary" target="_blank">Read More</a>
+        <a href="https://github.com/Miss0range/dlplanner" class="btn btn-primary" target="_blank">Git Repo</a>
     </div>
 </div>

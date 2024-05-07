@@ -18,7 +18,7 @@
         <p class=" lead">
             This fully responsive website is made for my friend Jinhui's trip to Japan with HTML CSS and vanilla JavaScript. Looks better on mobile device.
         </p>
-        <a href="https://itinerary.magicajen.com/" class="btn btn-primary">Read More</a>
-        <a href="https://github.com/Miss0range/itinerary" class="btn btn-primary">Git Repo</a>
+        <a href="https://itinerary.magicajen.com/" class="btn btn-primary" target="_blank">Read More</a>
+        <a href="https://github.com/Miss0range/itinerary" class="btn btn-primary" target="_blank">Git Repo</a>
     </div>
 </div>

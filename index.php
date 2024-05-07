@@ -6,6 +6,7 @@
     <!-- Project show case with card-->
     <section id="projects" class="bg-light">
         <div class="container-lg py-3">
+            <?php include('showcase/memorycard.php');?>
             <?php include('showcase/colorpickersc.php');?>
             <?php include("showcase/itinsc.php"); ?>    
             <?php include("showcase/dlsc.php"); ?>

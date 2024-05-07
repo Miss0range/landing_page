@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-color: rgb(66, 66, 66);
+            display: flex;
+        }
+        .gameContainer{
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+        .card {
+            width: 23%;
+            height: 23%;
+            margin: 5px;
+            position: relative;
+            transform-style:preserve-3d;
+            transition: transform 0.3s;
+            cursor: pointer;
+            background-color: #807f7f;
+        }
+        .card:active{
+            transform: scale(0.95);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card.flip{
+            transform:rotateY(180deg);
+            cursor: pointer;
+        }
+        .front,
+        .back{
+            background-color: rgb(67, 67, 67);
+            margin:  6% 6% 6% 6%;
+            width: 88%;
+            height: 88%;
+            padding: 10px;
+            border-radius: 4px;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .front{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="gameContainer">
+        <div class="container">
+            <h1 class="text-center text-white display-4">How is your memory</h1>
+        </div>
+        <div class="card" data-image="imp">
+            <img src="./assets/imp.png" alt="imp" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="imp">
+            <img src="./assets/imp.png" alt="imp" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="star-struck">
+            <img src="./assets/star-struck.png" alt="star" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="star-struck">
+            <img src="./assets/star-struck.png" alt="star" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="space_invader">
+            <img src="./assets/space_invader.png" alt="invade" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="space_invader">
+            <img src="./assets/space_invader.png" alt="invade" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="clown_face">
+            <img src="./assets/clown_face.png" alt="clown" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="clown_face">
+            <img src="./assets/clown_face.png" alt="clown" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="blush">
+            <img src="./assets/blush.png" alt="blush" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="blush">
+            <img src="./assets/blush.png" alt="blush" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="shushing_face">
+            <img src="./assets/shushing_face.png" alt="shush" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="shushing_face">
+            <img src="./assets/shushing_face.png" alt="shush" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="rage">
+            <img src="./assets/rage.png" alt="angryface" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="rage">
+            <img src="./assets/rage.png" alt="angryface" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="heart_eyes">
+            <img src="./assets/heart_eyes.png" alt="heart" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+        <div class="card" data-image="heart_eyes">
+            <img src="./assets/heart_eyes.png" alt="heart" class="front">
+            <img src="./assets/question.png" alt="question" class="back">
+        </div>
+    </div>
+    <script>
+        //Init
+        let flipQueue = [];
+        let score = 0;
+        const cards = document.querySelectorAll(`.card`);
+
+        const initGame = ()=>{
+            cards.forEach(card=>{
+                card.addEventListener(`click`, ()=>flip(card));
+            });    
+        }
+
+        const success = ()=>{
+            flipQueue.forEach(card=>card.removeEventListener(`click`, flip));
+            flipQueue=[];
+            //keep score
+            score+=1;
+            console.log(score);
+            if(score === 8){
+                console.log(`You Win!`);
+                endGame();
+            }
+        }
+
+        const fail = ()=>{
+            flipQueue.forEach(card=>{
+                card.classList.remove(`flip`);
+                card.childNodes[1].classList.remove(`flip`);
+            });
+            flipQueue=[];
+        }
+
+
+        const checkCard = ()=>{
+            if(flipQueue[0].dataset.image === flipQueue[1].dataset.image){
+                success();
+            }else{
+                setTimeout(fail,500);
+            }
+        }
+
+        const flip = (card)=>{
+            card.classList.add(`flip`);
+            card.childNodes[1].classList.add(`flip`);
+            if(flipQueue.length === 0 || flipQueue[0] !== card){
+                flipQueue.push(card);
+            }
+            if(flipQueue.length === 2){
+                checkCard()
+            }
+        };
+
+        const shuffle = ()=>{
+            cards.forEach((card)=>{
+                let rndIndex = Math.floor(Math.random()*16);
+                card.style.order = rndIndex;
+            });
+        }
+
+        const endGame = ()=>{
+            const header1 = document.querySelector(`h1`);
+            header1.innerHTML = `You Win!!!`;
+            setTimeout(()=>{
+                shuffle();
+                cleanUp();
+                initGame();
+                header1.innerHTML = `How is your memory`;
+            },5000);
+        }
+
+        const cleanUp = ()=>{
+            cards.forEach((card)=>{
+                card.classList.remove(`flip`);
+                card.childNodes[1].classList.remove(`flip`);
+            });
+        }
+
+        window.onload = (event)=>{
+            shuffle();
+        };
+
+
+
+        initGame();
+
+        if(score === 8){
+            console.log(`You Win!`);
+            endGame();
+        }
+    </script>
+</body>
+</html>

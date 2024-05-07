@@ -1,0 +1,242 @@
+<html lang="en">
+<?php include('blogHeader.php');?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Memory Puzzle Source Code</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="display-3 font-weight-bold text-center p-5 m-5">Flip Memory Puzzle Source Code</div>
+            <div style="background-color: #E8E8E8;">
+                <pre>
+                    <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Document&lt;/title&gt;
+                        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"&gt;
+                        &lt;style&gt;
+                            *{
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                            }
+                            body{
+                                height: 100vh;
+                                background-color: rgb(66, 66, 66);
+                                display: flex;
+                            }
+                            .gameContainer{
+                                width: 600px;
+                                height: 600px;
+                                margin: auto;
+                                display: flex;
+                                flex-wrap: wrap;
+                                perspective: 1000px;
+                            }
+                            .card {
+                                width: 23%;
+                                height: 23%;
+                                margin: 5px;
+                                position: relative;
+                                transform-style:preserve-3d;
+                                transition: transform 0.3s;
+                                cursor: pointer;
+                                background-color: #807f7f;
+                            }
+                            .card:active{
+                                transform: scale(0.95);
+                                transition: transform 0.2s ease-in-out;
+                            }
+                            .card.flip{
+                                transform:rotateY(180deg);
+                                cursor: pointer;
+                            }
+                            .front,
+                            .back{
+                                background-color: rgb(67, 67, 67);
+                                margin:  6% 6% 6% 6%;
+                                width: 88%;
+                                height: 88%;
+                                padding: 10px;
+                                border-radius: 4px;
+                                position: absolute;
+                                backface-visibility: hidden;
+                            }
+                            .front{
+                                transform: rotateY(180deg);
+                            }
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div class="gameContainer"&gt;
+                            &lt;div class="container"&gt;
+                                &lt;h1 class="text-center text-white display-4"&gt;How is your memory&lt;/h1&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="imp"&gt;
+                                &lt;img src="./assets/imp.png" alt="imp" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="imp"&gt;
+                                &lt;img src="./assets/imp.png" alt="imp" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="star-struck"&gt;
+                                &lt;img src="./assets/star-struck.png" alt="star" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="star-struck"&gt;
+                                &lt;img src="./assets/star-struck.png" alt="star" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="space_invader"&gt;
+                                &lt;img src="./assets/space_invader.png" alt="invade" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="space_invader"&gt;
+                                &lt;img src="./assets/space_invader.png" alt="invade" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="clown_face"&gt;
+                                &lt;img src="./assets/clown_face.png" alt="clown" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="clown_face"&gt;
+                                &lt;img src="./assets/clown_face.png" alt="clown" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="blush"&gt;
+                                &lt;img src="./assets/blush.png" alt="blush" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="blush"&gt;
+                                &lt;img src="./assets/blush.png" alt="blush" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="shushing_face"&gt;
+                                &lt;img src="./assets/shushing_face.png" alt="shush" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="shushing_face"&gt;
+                                &lt;img src="./assets/shushing_face.png" alt="shush" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="rage"&gt;
+                                &lt;img src="./assets/rage.png" alt="angryface" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="rage"&gt;
+                                &lt;img src="./assets/rage.png" alt="angryface" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="heart_eyes"&gt;
+                                &lt;img src="./assets/heart_eyes.png" alt="heart" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="card" data-image="heart_eyes"&gt;
+                                &lt;img src="./assets/heart_eyes.png" alt="heart" class="front"&gt;
+                                &lt;img src="./assets/question.png" alt="question" class="back"&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;script&gt;
+                            //Init
+                            let flipQueue = [];
+                            let score = 0;
+                            const cards = document.querySelectorAll(`.card`);
+
+                            const initGame = ()=&gt;{
+                                cards.forEach(card=&gt;{
+                                    card.addEventListener(`click`, ()=&gt;flip(card));
+                                });    
+                            }
+
+                            const success = ()=&gt;{
+                                flipQueue.forEach(card=&gt;card.removeEventListener(`click`, flip));
+                                flipQueue=[];
+                                //keep score
+                                score+=1;
+                                console.log(score);
+                                if(score === 8){
+                                    console.log(`You Win!`);
+                                    endGame();
+                                }
+                            }
+
+                            const fail = ()=&gt;{
+                                flipQueue.forEach(card=&gt;{
+                                    card.classList.remove(`flip`);
+                                    card.childNodes[1].classList.remove(`flip`);
+                                });
+                                flipQueue=[];
+                            }
+
+
+                            const checkCard = ()=&gt;{
+                                if(flipQueue[0].dataset.image === flipQueue[1].dataset.image){
+                                    success();
+                                }else{
+                                    setTimeout(fail,500);
+                                }
+                            }
+
+                            const flip = (card)=&gt;{
+                                card.classList.add(`flip`);
+                                card.childNodes[1].classList.add(`flip`);
+                                if(flipQueue.length === 0 || flipQueue[0] !== card){
+                                    flipQueue.push(card);
+                                }
+                                if(flipQueue.length === 2){
+                                    checkCard()
+                                }
+                            };
+
+                            const shuffle = ()=&gt;{
+                                cards.forEach((card)=&gt;{
+                                    let rndIndex = Math.floor(Math.random()*16);
+                                    card.style.order = rndIndex;
+                                });
+                            }
+
+                            const endGame = ()=&gt;{
+                                const header1 = document.querySelector(`h1`);
+                                header1.innerHTML = `You Win!!!`;
+                                setTimeout(()=&gt;{
+                                    shuffle();
+                                    cleanUp();
+                                    initGame();
+                                    header1.innerHTML = `How is your memory`;
+                                },5000);
+                            }
+
+                            const cleanUp = ()=&gt;{
+                                cards.forEach((card)=&gt;{
+                                    card.classList.remove(`flip`);
+                                    card.childNodes[1].classList.remove(`flip`);
+                                });
+                            }
+
+                            window.onload = (event)=&gt;{
+                                shuffle();
+                            };
+
+
+
+                            initGame();
+
+                            if(score === 8){
+                                console.log(`You Win!`);
+                                endGame();
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+<?php include('../footer.php');?>    
+</body>
+</html>
