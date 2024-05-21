@@ -5,9 +5,9 @@
     <div class="col-md-4">
         <div id="showcasecard" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active"><img src="assets/trip/trip1.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item active"><img src="assets/trip/trip2.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item active"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid "></div>
+                <div class="carousel-item active"><img src="assets/trip/trip1.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/trip/trip2.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid object-fit-cover"></div>
             </div>
         </div>
     </div>

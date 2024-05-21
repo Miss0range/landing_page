@@ -5,8 +5,8 @@
     <div class="col-md-4">
         <div id="showcasecard" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active"><img src="assets/memory_card/memory_card1.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item"><img src="assets/memory_card/memory_card2.png" alt="" class="img-fluid "></div>
+                <div class="carousel-item active"><img src="assets/memory_card/memory_card1.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/memory_card/memory_card2.png" alt="" class="img-fluid object-fit-cover"></div>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <!-- contact me form -->
 <section id="contact">
     <div class="container-lg">
-        <div class="text-center">
+        <div class="text-center mt-5">
             <h4 class="display-6">Contact Me</h4>
             <p class="lead">Looking forward to hearing from you! &#128522</p>
         </div>

@@ -17,14 +17,11 @@
                 </div>
                 <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel" style="height: 60vh;">
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid"></div>
-                        <div class="carousel-item"><img src="assets/color_picker/dark_mobile.png" alt="" class="img-fluid "></div>
-                        <div class="carousel-item"><img src="assets/color_picker/light.png" alt="" class="img-fluid "></div>
-                        <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid "></div>
-                        <div class="carousel-item"><img src="assets/dlplanner/dark2500.png" alt="" class="img-fluid "></div>
-                        <div class="carousel-item"><img src="assets/dlplanner/light2500.png" alt="" class="img-fluid"></div>
-                        <div class="carousel-item"><img src="assets/trip/trip1.png" alt="" class="img-fluid"></div>
-                        <div class="carousel-item"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid"></div>
+                        <div class="carousel-item active"><img src="assets/currency_converter/currency.png" alt="" class="img-fluid object-fit-cover"></div>
+                        <div class="carousel-item"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid object-fit-cover"></div>
+                        <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid object-fit-cover"></div>
+                        <div class="carousel-item"><img src="assets/dlplanner/dark2500.png" alt="" class="img-fluid object-fit-cover"></div>
+                        <div class="carousel-item"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid object-fit-cover"></div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#showcaseimg" data-bs-slide = "prev">
                             <span class="carousel-control-prev-icon text-primary" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>

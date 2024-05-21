@@ -5,10 +5,10 @@
     <div class="col-md-4">
         <div id="showcasecard" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item"><img src="assets/color_picker/dark_mobile.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item"><img src="assets/color_picker/light.png" alt="" class="img-fluid "></div>
-                <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid "></div>
+                <div class="carousel-item active"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/color_picker/dark_mobile.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/color_picker/light.png" alt="" class="img-fluid object-fit-cover"></div>
+                <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid object-fit-cover"></div>
             </div>
         </div>
     </div>
