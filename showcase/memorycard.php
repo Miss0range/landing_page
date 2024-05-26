@@ -17,7 +17,7 @@
         <p class=" lead">
             A card memory game made with vanilla JavaScript.
         </p>
-        <a href="/projs/memory_card/index.html" class="btn btn-primary" target="_blank">Try out</a>
+        <a href="/projs/memory_card/index.html" class="btn btn-primary" target="_blank">Try it out!</a>
         <a href="/projs/memory_card_code.php" class="btn btn-primary" target="_blank">Code</a>
     </div>
 </div>

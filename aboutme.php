@@ -3,36 +3,63 @@
 
 <!-- About me. Short Introduction with showcase -->
 <section id="about">
-        <div class="container-lg justify-content-center align-items-center my-5 py-5">
-            <div class="row">
-                <div class="col-lg-6 col-xl-4">
-                    <div id="about-me-text" class ="justify-content-center align-items-center" >
-                        <h1 class="display-5">Hello there,</h1>
-                        <p class="lead">My name is Jiachen (Jeniffer) Zhang. I am a front end developer with working experience of HTML, CSS, Javascript, React and WordPress. I've also done mobile application development in Flutter. Check out my projects <a href="" class="text-success fw-bold">here</a></p>
+    <div class="wrap">
+        <div class="container">
+            <div class="slide">
+                <div class="item" style="background-image: url(assets/dlplanner/dark2500.png);">
+                    <div class="content">
+                        <div class="name">Deadline Planner</div>
+                        <div class="des">A due date oriented personal digital planner on android 12. Built with Flutter frame work powered by Dart. This digital planner helps users to keep track of remaning time and due date of their tasks, manage daily tasks with a single click and plan ahead with our calendar view. All storage are local to protect your privacy. </div>
+                        <button><a href="#projects" style="text-decoration: none;">Read more</a></button>
 
-                        <p class="lead">I've done all kinds of jobs like tutor, customer services expert, and bot trainer. I'm actively looking for jobs in Austin area. In my free time I record and edit my own walkthrough videos and upload them on Youtube and Bilibili.</p>
-                        <a href = 'https://space.bilibili.com/737188?spm_id_from=333.788.0.0' class="btn btn-secondary" target = "_blank">Bilibili</a>
-                        <a href = 'https://www.youtube.com/channel/UCNV6tlF6gHm1weSrn5Ho87w' class="btn btn-secondary" target = "_blank">Youtube</a>
                     </div>
                 </div>
-                <div id="showcaseimg" class="col-lg-6 col-xl-8 carousel slide" data-bs-ride="carousel" style="height: 60vh;">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active"><img src="assets/currency_converter/currency.png" alt="" class="img-fluid object-fit-cover"></div>
-                        <div class="carousel-item"><img src="assets/color_picker/light_mobile.png" alt="" class="img-fluid object-fit-cover"></div>
-                        <div class="carousel-item"><img src="assets/color_picker/dark.png" alt="" class="img-fluid object-fit-cover"></div>
-                        <div class="carousel-item"><img src="assets/dlplanner/dark2500.png" alt="" class="img-fluid object-fit-cover"></div>
-                        <div class="carousel-item"><img src="assets/trip/tripmobile.png" alt="" class="img-fluid object-fit-cover"></div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#showcaseimg" data-bs-slide = "prev">
-                            <span class="carousel-control-prev-icon text-primary" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next text-white" type="button" data-bs-target="#showcaseimg" data-bs-slide = "next">
-                            <span class="carousel-control-next-icon fw-bold" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                <div class="item" style="background-image: url(assets/about/code.jpg);">
+                    <div class="content">
+                        <div class="name">Hello there!</div>
+                        <div class="des">I am Jiachen (Jeniffer) Zhang, a front end developer with working experience of ReactJS, Javascript, TailwindCSS, PHP, Flutter and WordPress.<br /> Check out my projects down below.</div>
+                        <button><a href="#projects" style="text-decoration: none;">Read more</a></button>
                     </div>
-                    
+                </div>
+                <div class="item" style="background-image: url(assets/blogs/blogs.png);">
+                    <div class="content">
+                        <div class="name">Blog</div>
+                        <div class="des">A social media blog made with ReactJS, Tailwind and TinyMCE. The backend is handled by Appwrite.</div>
+                        <button><a href="https://blogs.magicajen.com/">Check it out</a></button>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(assets/currency_converter/currency.png);">
+                    <div class="content">
+                        <div class="name">Currency Converter</div>
+                        <div class="des">An real-time currency converter made with React and TailwindCss.  Get accurate and reliable foreign exchange rates, based on Fawaz Ahmed's <a href="https://github.com/fawazahmed0/exchange-api" target="_blank">Free Currency Exchange Rates API</a> Convert between 150+ currencies including common crypto-currencies. </div>
+                        <button><a href="https://currency.magicajen.com/">Check it out</a></button>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(assets/memory_card/memory_card1.png);">
+                    <div class="content">
+                        <div class="name">Flip Memory Puzzle</div>
+                        <div class="des">A card memory game made with vanilla JavaScript.</div>
+                        <button><a href="https://magicajen.com/projs/memory_card/index.html">Try it out</a></button>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(assets/color_picker/dark_mobile.png);">
+                    <div class="content">
+                        <div class="name">Random Color Generator + Color Picker</div>
+                        <div class="des">This color picker generates a 6 by 6 random color palette and stores colors of your choice. Can't decide which color you want to use for your new landing page or bedroom wall? Try it out today!</div>
+                        <button><a href="https://magicajen.com/projs/color_picker/index.html">Try it out</a></button>
+                    </div>
                 </div>
             </div>
+            <div class="button">
+                <button class="direction prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                <button class="direction next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
         </div>
-    </section>
+    </div>
+</section>

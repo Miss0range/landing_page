@@ -17,9 +17,9 @@
             Random Color Generator + Color Picker
         </h5>
         <p class=" lead">
-            This color picker generate 6 by 6 random color palette and stores colors of your choice. Can't decide which color you want to use for your new landing page or bedroom wall? Try it out today!
+            This color picker generates a 6 by 6 random color palette and stores colors of your choice. Can't decide which color you want to use for your new landing page or bedroom wall? Try it out today!
         </p>
-        <a href="/projs/color_picker/index.html" class="btn btn-primary" target="_blank">Try out</a>
+        <a href="/projs/color_picker/index.html" class="btn btn-primary" target="_blank">Try it out!</a>
         <a href="/projs/color_picker_code.php" class="btn btn-primary" target="_blank">Code</a>
     </div>
 </div>

@@ -10,36 +10,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>MagicaJen</title>
     <style>
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon{
-            width: 50px;
-            height: 50px;
-        }
-
-        a:not([class*="btn"]) {
-            text-decoration: none;
-        }
-        a:not([class*="btn"]):hover {
-            text-decoration: underline;
-        }
-
-        .form-control::placeholder{
-            color: #c4c4c4;
-        }
-        .carousel-control-next,
-        .carousel-control-prev /*, .carousel-indicators */ {
-            filter: invert(100%);
-        }
-        .bg-light{
-            background-color: #f1f0f7 !important;
-        }
+        <?php include 'CSS/styles.css';?>
     </style>
 </head>
 <body>
     <!-- navigation section -->
     <nav class = "navbar navbar-expand-md py-3 bg-light" id = "topNavBar">
         <div class="container-lg">
-            <a href="index.php" class="navbar-brand">
+            <a id="brand" href="index.php" class="navbar-brand">
+                <img id="icon" src="icon/icon.png" alt="icon">
                 <span class="fw-bold text-secondary">MagicaJen</span>   
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target = "#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -52,6 +31,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://blogs.magicajen.com/" class="nav-link" target="_blank">Blogs</a>
                     </li>
                     <li class="nav-item d-md-none">
                         <a href="#contact" class="nav-link">Contact Me</a>
