@@ -4,7 +4,7 @@
 <!-- About me. Short Introduction with showcase -->
 <section id="about">
     <div class="wrap">
-        <div class="container">
+        <div class="slidecontainer">
             <div class="slide">
                 <div class="item" style="background-image: url(assets/dlplanner/dark2500.png);">
                     <div class="content">
