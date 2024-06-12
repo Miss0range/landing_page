@@ -7,6 +7,7 @@
     <!-- Project show case with card-->
     <section id="projects" class="bg-light">
         <div class="container-lg py-3">
+            <?php include('showcase/example1.php');?>
             <?php include('showcase/social_media_blog.php');?>
             <?php include('showcase/currency_converter.php');?>
             <?php include('showcase/memorycard.php');?>

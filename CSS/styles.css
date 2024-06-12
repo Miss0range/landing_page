@@ -29,8 +29,8 @@ body {
 }
 
 .slidecontainer .slide .item {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
